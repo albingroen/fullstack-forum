@@ -33,7 +33,7 @@ class Question extends Component {
     const questionId = match.params.id;
 
     axios
-      .get(`http://localhost:5000/question/${questionId}`)
+      .get(`https://server-dbjtmohwsc.now.sh/question/${questionId}`)
       .then(response => {
         this.setState({
           data: response.data.question,
@@ -52,7 +52,7 @@ class Question extends Component {
     const questionId = match.params.id;
 
     axios
-      .get(`http://localhost:5000/answer/${questionId}`)
+      .get(`https://server-dbjtmohwsc.now.sh/answer/${questionId}`)
       .then(response => {
         this.setState({
           answers: response.data.answers
@@ -81,7 +81,7 @@ class Question extends Component {
     const { createdBy, text } = this.state;
 
     axios
-      .post("http://localhost:5000/answer", {
+      .post("https://server-dbjtmohwsc.now.sh/answer", {
         question: questionId,
         createdBy: createdBy,
         text: text
@@ -100,13 +100,11 @@ class Question extends Component {
 
   handleLike(id, method) {
     axios
-      .post(`http://localhost:5000/question/${method}-like/${id}`)
+      .post(`https://server-dbjtmohwsc.now.sh/question/${method}-like/${id}`)
       .then(response => {
         this.setState({
           likes: response.data.likes
         });
-
-        console.log("Changed likes");
       })
       .catch(error => {
         console.log(error);

@@ -58,7 +58,7 @@ class NewQuestion extends Component {
     const { createdBy, title, tags, text } = this.state;
 
     axios
-      .post("http://localhost:5000/question", {
+      .post("https://server-dbjtmohwsc.now.sh/question", {
         createdBy: createdBy,
         title: title,
         tags: tags,

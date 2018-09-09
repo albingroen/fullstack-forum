@@ -20,7 +20,7 @@ class Timeline extends Component {
 
   getQuestions() {
     axios
-      .get("http://localhost:5000/questions")
+      .get("https://server-dbjtmohwsc.now.sh/questions")
       .then(response => {
         this.setState({
           questions: response.data.questions,
